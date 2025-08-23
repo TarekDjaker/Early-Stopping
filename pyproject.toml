@@ -19,6 +19,11 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 license = "MIT"  # ✅ Use SPDX identifier only
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+]
 
 [project.urls]
 Homepage = "https://github.com/EarlyStop/EarlyStopping"
