@@ -1,0 +1,160 @@
+/* ==================== Variables et Styles de Base ==================== */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-code: 'Roboto Mono', monospace;
+    
+    --color-light-bg: #f0f2f5;
+    --color-light-bg-variant: #ffffff;
+    --color-light-text: #0f172a;
+    --color-light-primary: #0055ff;
+    --color-light-secondary: #5a67d8;
+    
+    --color-dark-bg: #0f172a;
+    --color-dark-bg-variant: #1e293b;
+    --color-dark-text: #e2e8f0;
+    --color-dark-primary: #00aaff;
+    --color-dark-secondary: #7f5af0;
+
+    --color-bg: var(--color-dark-bg);
+    --color-bg-variant: var(--color-dark-bg-variant);
+    --color-text: var(--color-dark-text);
+    --color-primary: var(--color-dark-primary);
+    --color-secondary: var(--color-dark-secondary);
+
+    --container-width-lg: 75%;
+    --transition: all 400ms ease;
+}
+
+html[data-theme='light'] {
+    --color-bg: var(--color-light-bg);
+    --color-bg-variant: var(--color-light-bg-variant);
+    --color-text: var(--color-light-text);
+    --color-primary: var(--color-light-primary);
+    --color-secondary: var(--color-light-secondary);
+}
+
+* {
+    margin: 0; padding: 0; border: 0; outline: 0;
+    box-sizing: border-box; list-style: none; text-decoration: none;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-primary);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    transition: var(--transition);
+}
+
+/* ==================== Styles Généraux ==================== */
+.container { width: var(--container-width-lg); margin: 0 auto; }
+h1, h2, h3, h4, h5 { font-weight: 600; color: var(--color-primary); }
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
+section { padding: 6rem 0; }
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid var(--color-primary);
+    background: var(--color-primary);
+    color: white; /* Changé pour un meilleur contraste */
+}
+.btn:hover { background: transparent; color: var(--color-primary); }
+
+/* ==================== Barre de Navigation ==================== */
+nav {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(15px);
+    width: 100vw; height: 5rem;
+    position: fixed; top: 0; left: 0; z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+html[data-theme='light'] nav {
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--color-primary); }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { color: var(--color-text); transition: var(--transition); font-weight: 500; }
+.nav-links a:hover { color: var(--color-primary); }
+
+/* Theme Switch */
+.theme-switch-wrapper { display: flex; align-items: center; }
+.theme-switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+.theme-switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: var(--color-primary); }
+input:checked + .slider:before { transform: translateX(24px); }
+
+/* ==================== Header / Accueil ==================== */
+header { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.header-container h2 { color: var(--color-text); font-size: 1.8rem; }
+.typing-animation { color: var(--color-primary); font-family: var(--font-code); }
+.tagline { margin: 1rem 0 2rem; }
+.header-socials { display: flex; gap: 1.5rem; justify-content: center; }
+.header-socials .btn { font-size: 1rem; }
+.header-socials .btn i { margin-right: 0.5rem; }
+
+/* ==================== Projets ==================== */
+.project-filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--color-bg-variant);
+    color: var(--color-text);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.filter-btn:hover, .filter-btn.active { background: var(--color-primary); color: white; border-color: var(--color-primary); }
+
+.projets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.projet-card {
+    background: var(--color-bg-variant);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+.projet-card:hover { transform: translateY(-10px); border-color: var(--color-primary); }
+.projet-content h3 { margin-bottom: 0.5rem; }
+.project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.project-tech span {
+    background: var(--color-primary);
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-family: var(--font-code);
+}
+.project-links { display: flex; gap: 1.5rem; margin-top: 1.5rem; align-self: flex-end; }
+.project-links a { font-size: 1.8rem; color: var(--color-text); transition: var(--transition); }
+.project-links a:hover { color: var(--color-primary); }
+
+/* ==================== Articles ==================== */
+#articles { background: var(--color-bg-variant); }
+.articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.article-card {
+    display: block;
+    padding: 2rem;
+    background: var(--color-bg);
+    border-radius: 1rem;
+    transition: var(--transition);
+    color: var(--color-text);
+}
+.article-card:hover { transform: translateY(-10px); background: var(--color-bg-variant); }
+.article-card h4 { color: var(--color-primary); margin-bottom: 1rem; }
+.article-card span { display: inline-block; margin-top: 1.5rem; color: var(--color-secondary); font-weight: 600; }
+.article-card:hover span { text-decoration: underline; }
+
+/* ... (Conserver les styles pour Profil, Parcours, Contact, Footer de la V1 et les adapter si besoin) ... */

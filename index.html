@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarek Djaker - Machine Learning & Data Science</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">Tarek Djaker</a>
+            <ul class="nav-links">
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <header id="accueil">
+        <div class="container header-container">
+            <h1>Tarek Djaker</h1>
+            <h2><span class="typing-animation"></span></h2>
+            <p class="tagline">Spécialiste en modélisation fiable et déploiement d'applications IA.</p>
+            <div class="header-socials">
+                <a href="https://linkedin.com/in/tarek-djaker-9084a8244" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/TarekDjaker" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="profil">
+        <div class="container">
+            <h2>Mon Approche</h2>
+            <div class="profil-content">
+                 <p>
+                    Passionné par l'application rigoureuse des mathématiques, je construis des modèles de Machine Learning non seulement performants, mais aussi fiables et interprétables. Mon objectif est de maîtriser toute la chaîne de valeur, de la recherche et l'expérimentation jusqu'à la mise en production via des API et des conteneurs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets">
+        <div class="container">
+            <h2>Projets</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="time-series">Séries Temporelles</button>
+                <button class="filter-btn" data-filter="llm">LLM/RAG</button>
+                <button class="filter-btn" data-filter="deploiement">Déploiement</button>
+                <button class="filter-btn" data-filter="bi">BI</button>
+            </div>
+
+            <div class="projets-grid">
+                <div class="projet-card" data-category="time-series deploiement">
+                    <div class="projet-content">
+                        <h3>eco2mix-forecast</h3>
+                        <p>Prévision de la consommation électrique via un pipeline robuste, avec exposition des prédictions via une API conteneurisée.</p>
+                        <div class="project-tech">
+                            <span>scikit-learn</span><span>FastAPI</span><span>Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TarekDjaker" target="_blank" title="Code Source"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" title="Démo Live (à ajouter)"><i class="fas fa-rocket"></i></a>
+                    </div>
+                </div>
+                <div class="projet-card" data-category="bi">
+                    <div class="projet-content">
+                        <h3>velib-availability-analytics</h3>
+                        <p>Analyse géo-spatiale et temporelle de la disponibilité des Vélib' pour identifier les stations critiques via un dashboard interactif.</p>
+                        <div class="project-tech">
+                            <span>SQL</span><span>Power BI / Tableau</span><span>Ingestion de données</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TarekDjaker" target="_blank" title="Code Source"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="projet-card" data-category="llm">
+                     <div class="projet-content">
+                        <h3>Assistant RAG "FAQ énergie"</h3>
+                        <p>Assistant Q&A basé sur des documents, orchestré avec LangGraph et intégrant un protocole d'évaluation de la pertinence.</p>
+                        <div class="project-tech">
+                            <span>LangChain</span><span>LangGraph</span><span>Évaluation RAG</span>
+                        </div>
+                    </div>
+                   <div class="project-links">
+                        <a href="https://github.com/TarekDjaker" target="_blank" title="Code Source"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="projet-card" data-category="time-series">
+                     <div class="projet-content">
+                        <h3>Data Challenge - Prédiction Spot vs Intraday</h3>
+                        <p>Modélisation supervisée pour prédire les écarts de prix de l'énergie, avec un focus sur la gestion des données manquantes.</p>
+                        <div class="project-tech">
+                            <span>Feature Engineering</span><span>Protocoles d'évaluation</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TarekDjaker" target="_blank" title="Code Source"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="articles">
+        <div class="container">
+            <h2>Publications & Articles</h2>
+            <div class="articles-grid">
+                <a href="#" class="article-card">
+                    <h4>Comment j'ai construit un pipeline de A à Z pour eco2mix-forecast</h4>
+                    <p>Un guide détaillé sur les choix d'architecture, l'entraînement du modèle et la création de l'API FastAPI.</p>
+                    <span>Lire la suite <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="article-card">
+                    <h4>Les défis de l'évaluation RAG : Au-delà de la similarité cosinus</h4>
+                    <p>Analyse des métriques de "faithfulness" et "answer relevancy" dans le cadre de mon projet d'assistant Q&A.</p>
+                    <span>Lire la suite <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="article-card">
+                    <h4>Early Stopping pour les Nuls : Mon stage en IA Frugale</h4>
+                    <p>Vulgarisation des concepts d'early stopping et de bornes d'oracle non-asymptotiques explorés durant mon stage.</p>
+                    <span>Lire la suite <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="parcours">
+        </section>
+
+    <section id="contact">
+        <div class="container contact-container">
+            <h2>Discutons de votre projet</h2>
+            <p>Disponible immédiatement, je suis à la recherche d'un poste de Data Scientist Junior en Île-de-France pour appliquer et approfondir mes compétences.</p>
+            <a href="mailto:djakertarek@gmail.com" class="btn btn-primary">Me Contacter</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2025 Tarek Djaker. Construit avec passion.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
